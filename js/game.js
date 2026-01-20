@@ -13,7 +13,7 @@ class Player {
         this.health = health;
         this.blockLookingAt = [];
         this.selectedSlot = 0;
-        this.image = `${name}.png`;
+        this.image = `textures/${name}.png`;
     }
 }
 
@@ -24,7 +24,7 @@ class Mob {
         this.y_cord = cords[1];
         this.health = health;
         this.health_base = 10;
-        this.image = `${name}.png`;
+        this.image = `textures/${name}.png`;
     }
 }
 
@@ -36,7 +36,7 @@ class Block {
         this.solid = solid;
         this.transparent = transparent;
         this.falling_block = falling_block;
-        this.image = `${name}.png`;
+        this.image = `textures/${name}.png`;
     }
 }
 
@@ -148,8 +148,8 @@ function update() {
 
         sessionStorage.setItem("player", JSON.stringify(player));
 
-        document.getElementById("player_cords").innerHTML = `Cords : (${player.x_cord} ; ${player.y_cord})`;
-        document.getElementById("player_look_cords").innerHTML = `Cords looking at : (${player.blockLookingAt[0]};${player.blockLookingAt[1]})`;
+        document.getElementById("player_cords").innerHTML = `Coords : (${player.x_cord} ; ${player.y_cord})`;
+        document.getElementById("player_look_cords").innerHTML = `Coords looking at : (${player.blockLookingAt[0]};${player.blockLookingAt[1]})`;
     }
 }
 
@@ -387,7 +387,7 @@ document.onkeydown = function (e) {
             break;
         case "e":
             game_paused = true;
-            open("inventory.html");
+            open("../inventory.html");
             break;
     }
     update();
