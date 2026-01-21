@@ -387,7 +387,7 @@ document.onkeydown = function (e) {
             break;
         case "e":
             game_paused = true;
-            open("../inventory.html");
+            open("inventory.html");
             break;
     }
     update();
